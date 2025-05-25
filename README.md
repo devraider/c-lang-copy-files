@@ -4,4 +4,4 @@ Implementation of GNU `cp` command in C.
 
 # Motivation
 
-Levereage C skills in a project.
+Levereage C skills in building small projects.
