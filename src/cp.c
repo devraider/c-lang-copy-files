@@ -3,7 +3,7 @@
 // For exit, EXIT_FAILURE
 #include <stdlib.h>
 
-char *cp(char *fileSrcPath, char *fileDstPath)
+int cp(char *fileSrcPath, char *fileDstPath)
 {
     FILE *srcFile, *dstFile;
 
@@ -15,7 +15,7 @@ char *cp(char *fileSrcPath, char *fileDstPath)
     {
         // If either file could not be opened, print an error message
         fprintf(stderr, "Error opening files: %s or %s\n", fileSrcPath, fileDstPath);
-        return "Error";
+        return 1;
     }
 
     char buffer[1024];
@@ -33,7 +33,7 @@ char *cp(char *fileSrcPath, char *fileDstPath)
     fflush(stdout);
 
     // Return a success message
-    return "Done\n";
+    return 0;
 }
 
 int main(int argc, char *argv[])
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     char *fileDst = argv[2];
 
     // Call the cp function
-    char *result = cp(fileSrc, fileDst);
+    cp(fileSrc, fileDst);
 
     return 0;
 }
