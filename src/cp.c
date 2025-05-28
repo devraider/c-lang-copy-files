@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "cp.h"
 
 int cp(char *fileSrcPath, char *fileDstPath)
 {
