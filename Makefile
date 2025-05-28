@@ -9,7 +9,7 @@ all: cp
 
 # Build target for cp
 cp: 
-	$(CC) $(CFLAGS) src/cp.c -o cp
+	$(CC) $(CFLAGS) src/main.c -o cp
 
 # Remove target binary and object files
 remove:
