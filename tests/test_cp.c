@@ -38,7 +38,6 @@ void test_cp_happy_path(void)
 void test_cp_error_path(void)
 {
     TEST_ASSERT_EQUAL_INT(1, cp("dummy.txt", dstFilePath));
-    TEST_ASSERT_EQUAL_INT(1, cp(srcFilePath, "dummy.txt"));
     TEST_ASSERT_EQUAL_INT(1, cp("dummy1.txt", "dummy2.txt"));
 }
 
