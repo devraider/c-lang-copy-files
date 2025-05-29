@@ -6,7 +6,7 @@ int cp(char *fileSrcPath, char *fileDstPath)
     FILE *srcFile, *dstFile;
 
     srcFile = fopen(fileSrcPath, "rb");
-    dstFile = fopen(fileDstPath, "wb");
+    dstFile = fopen(fileDstPath, "rb+");
 
     // Check if the source file was opened successfully
     if (srcFile == NULL || dstFile == NULL)
