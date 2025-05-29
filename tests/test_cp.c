@@ -20,9 +20,10 @@ void setUp(void)
 void tearDown(void)
 {
     remove(srcFilePath);
+    remove(dstFilePath);
 }
 
-void test_cp(void)
+void test_cp_happy_path(void)
 {
     TEST_ASSERT_EQUAL_INT(0, cp(srcFilePath, dstFilePath));
 
@@ -34,12 +35,20 @@ void test_cp(void)
     TEST_ASSERT_EQUAL_INT(sizeof(srcFile), sizeof(dstFile));
 }
 
+void test_cp_error_path(void)
+{
+    TEST_ASSERT_EQUAL_INT(1, cp("dummy.txt", dstFilePath));
+    TEST_ASSERT_EQUAL_INT(1, cp(srcFilePath, "dummy.txt"));
+    TEST_ASSERT_EQUAL_INT(1, cp("dummy1.txt", "dummy2.txt"));
+}
+
 int main(void)
 {
     UNITY_BEGIN();
 
     // Run the tests
-    RUN_TEST(test_cp);
+    RUN_TEST(test_cp_happy_path);
+    RUN_TEST(test_cp_error_path);
 
     return UNITY_END();
 }
