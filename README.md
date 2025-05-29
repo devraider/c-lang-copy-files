@@ -47,6 +47,12 @@ make install-all
 make cp
 ```
 
+4. Run
+
+```bash
+./cp samples/sample.txt samples/dest.txt
+```
+
 ## Testing
 
 The project includes a suite of unit tests to ensure the cp function behaves as expected.
