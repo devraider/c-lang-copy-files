@@ -2,8 +2,8 @@
 #include "../libs/unity/unity.c"
 #include "../src/cp.c"
 
-char srcFilePath[] = "../samples/src.txt";
-char dstFilePath[] = "../samples/dest.txt";
+char srcFilePath[] = "samples/src.txt";
+char dstFilePath[] = "samples/dest.txt";
 
 void setUp(void)
 {
